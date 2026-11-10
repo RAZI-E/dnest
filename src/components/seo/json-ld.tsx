@@ -11,6 +11,16 @@ export function JsonLd() {
     logo: `${site.url}/images/logo-lockup.png`,
     description: site.description,
     telephone: site.phone,
+    slogan: "Homemade chocolates crafted with love",
+    knowsAbout: [
+      "Artisan Chocolates",
+      "Homemade Confectionery",
+      "Gourmet Chocolate Jars",
+      "Gulkand Chocolate",
+      "Peanut Chocolate",
+      "Festive Gifting",
+      "Vegetarian Chocolates",
+    ],
     contactPoint: {
       "@type": "ContactPoint",
       telephone: site.phone,
@@ -40,6 +50,8 @@ export function JsonLd() {
         name: product.name,
         description: product.description,
         image: `${site.url}${product.image}`,
+        category: "Confectionery > Chocolate Jars",
+        weight: product.weight,
         brand: {
           "@type": "Brand",
           name: "D'nest",
@@ -112,3 +124,4 @@ export function JsonLd() {
     </>
   );
 }
+

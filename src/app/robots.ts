@@ -8,7 +8,23 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: "/",
       },
+      // Explicitly allow AI search & answer engines for AI Search & Overviews
+      {
+        userAgent: [
+          "GPTBot",
+          "ChatGPT-User",
+          "PerplexityBot",
+          "ClaudeBot",
+          "Google-Extended",
+          "GoogleOther",
+          "Applebot",
+          "Applebot-Extended",
+          "cohere-ai",
+        ],
+        allow: "/",
+      },
     ],
     sitemap: `${site.url}/sitemap.xml`,
   };
 }
+

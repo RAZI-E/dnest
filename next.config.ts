@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const CATALOG_URL = "https://wa.me/c/144856982753472";
+const CATALOG_URL = "https://wa.me/c/919529176512";
 
 const nextConfig: NextConfig = {
   async redirects() {

@@ -7,6 +7,11 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: `${site.name} | Homemade chocolates`,
   description: site.description,
+  icons: {
+    icon: "/images/favicon.ico",
+    shortcut: "/images/favicon.ico",
+    apple: "/images/favicon.ico",
+  },
   openGraph: {
     title: `${site.name} | Homemade chocolates`,
     description: site.description,

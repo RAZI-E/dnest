@@ -10,6 +10,7 @@ import {
   productUrl,
   products,
 } from "@/lib/products";
+import { site } from "@/lib/site";
 
 export function Products() {
   return (
@@ -113,7 +114,7 @@ export function Products() {
           </div>
           <Button asChild size="lg" className="shrink-0">
             <a
-              href="https://wa.me/c/144856982753472"
+              href={site.catalogUrl}
               target="_blank"
               rel="noopener noreferrer"
             >

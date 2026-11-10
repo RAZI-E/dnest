@@ -46,3 +46,4 @@ D'nest provides bespoke gifting services for:
 - **Payment Methods**: UPI (Google Pay, PhonePe, Paytm, BHIM), Net Banking, Bank Transfer
 - **Shelf Life**: 60 days from packaging date; keep in cool, dry conditions
 - **Delivery**: Dispatched within 24-48 hours with pan-India delivery
+

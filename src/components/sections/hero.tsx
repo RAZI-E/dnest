@@ -31,14 +31,13 @@ export function Hero() {
         {/* Text side */}
         <div className="text-center md:text-left">
           <span className="mb-4 inline-block rounded-full border border-gold-400/40 bg-gold-400/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold-300">
-            Handcrafted Chocolates
+            D&apos;nest Artisan Chocolates
           </span>
           <h1 className="font-display text-5xl font-medium leading-[1.08] text-gold-300 md:text-6xl lg:text-7xl">
-            Homemade chocolates that tell a story
+            Homemade chocolates crafted with love
           </h1>
           <p className="mx-auto mt-5 max-w-sm text-base leading-relaxed text-ivory/75 md:mx-0 md:max-w-md md:text-lg">
-            Three unique flavours — Peanut, Gulkand and Mix Fruit — each jar
-            crafted fresh with premium chocolate and real ingredients.
+            Indulge in D&apos;nest handcrafted chocolate jars in three signature flavours — Peanut, Gulkand, and Mix Fruit. 100% vegetarian, made fresh with zero preservatives.
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row md:justify-start">

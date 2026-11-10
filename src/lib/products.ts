@@ -3,7 +3,10 @@ import { site } from "./site";
 export type Product = {
   slug: string;
   name: string;
+  tagline: string;
   description: string;
+  weight: string;
+  highlights: string[];
   image: string;
   price: number;
   mrp: number;
@@ -17,7 +20,10 @@ export const products: Product[] = [
   {
     slug: "peanut-chocolate",
     name: "D’nest Peanut Chocolate Jar",
-    description: "Peanuts in homemade chocolate, packed in a jar.",
+    tagline: "Crunchy Handcrafted Delights",
+    description: "Roasted golden peanuts encased in silky homemade chocolate. Crunchy, rich, and irresistible.",
+    weight: "200g Jar",
+    highlights: ["Roasted Peanuts", "Pure Cocoa", "100% Veg"],
     image: "/images/peanut.png",
     price: 270,
     mrp: 300,
@@ -26,8 +32,11 @@ export const products: Product[] = [
   {
     slug: "gulkand-chocolate",
     name: "D’nest Gulkand Chocolate",
+    tagline: "Shahi Rose Petal Preserve & Chocolate",
     description:
-      "Homemade chocolate with gulkand, the sweet rose-petal preserve.",
+      "A royal blend of sweet, aromatic rose-petal gulkand infused into decadent homemade chocolate.",
+    weight: "200g Jar",
+    highlights: ["Shahi Gulkand", "Aromatic Rose", "100% Veg"],
     image: "/images/gulkand.png",
     price: 270,
     mrp: 300,
@@ -36,7 +45,10 @@ export const products: Product[] = [
   {
     slug: "mix-fruit-chocolate",
     name: "D’nest Mix Fruit Chocolate",
-    description: "A blend of fruit and homemade chocolate.",
+    tagline: "A Perfect Blend of Fruits & Chocolate",
+    description: "Hand-picked dried fruits and berries harmoniously balanced with luscious homemade cocoa.",
+    weight: "200g Jar",
+    highlights: ["Real Fruit Bits", "Rich Cocoa", "100% Veg"],
     image: "/images/mix-fruit.png",
     price: 270,
     mrp: 300,

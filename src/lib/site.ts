@@ -1,14 +1,46 @@
 // Single place to edit the brand's links and contact details.
 export const site = {
   name: "D’nest",
+  brandName: "D'nest",
+  domain: "dnest.co.in",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://dnest.co.in",
   phone: "+91 95291 76512",
   whatsappNumber: "919529176512",
   description:
-    "Homemade chocolates in three flavours: peanut, gulkand and mix fruit. Order on WhatsApp.",
-  // Every "Buy" button sends people here.
-  // To open one product directly, use its own WhatsApp product link instead
-  // (WhatsApp Business > Catalog > product > Share) and set it as `whatsappUrl` in products.ts.
+    "D’nest crafts authentic homemade artisan chocolates in three signature flavours: Peanut Chocolate, Gulkand Chocolate, and Mix Fruit Chocolate. 100% vegetarian, handcrafted in small batches with zero preservatives. Order fresh chocolate jars directly on WhatsApp.",
   catalogUrl: "https://wa.me/c/919529176512",
   // Shown in the footer when set. Food businesses in India should display this.
   fssaiLicense: process.env.NEXT_PUBLIC_FSSAI_LICENSE ?? "",
+  keywords: [
+    "D'nest",
+    "Dnest",
+    "dnest",
+    "dnest chocolates",
+    "D'nest homemade chocolates",
+    "chocolate",
+    "chocolates",
+    "homemade chocolate",
+    "homemade chocolates",
+    "handcrafted chocolate",
+    "artisan chocolate India",
+    "peanut chocolate",
+    "peanut chocolate jar",
+    "gulkand chocolate",
+    "mix fruit chocolate",
+    "chocolate jar",
+    "gourmet chocolates",
+    "vegetarian chocolate",
+    "pure veg chocolate",
+    "chocolate gift box",
+    "chocolate gift hampers",
+    "wedding chocolate gifts",
+    "corporate chocolate gifting",
+    "buy chocolate online",
+    "order chocolate on whatsapp",
+    "fresh chocolate delivery",
+    "chocolate treats",
+    "homemade sweets",
+    "sweet rose gulkand chocolate",
+    "crunchy peanut chocolate",
+  ],
 };

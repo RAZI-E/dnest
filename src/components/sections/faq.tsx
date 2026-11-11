@@ -17,12 +17,12 @@ const faqs: FAQItem[] = [
   {
     question: "Are D'nest chocolates 100% vegetarian?",
     answer:
-      "Yes, absolutely! All D'nest chocolates are 100% vegetarian and crafted following strict hygiene and quality standards.",
+      "Yes, absolutely! All D'nest chocolates are 100% vegetarian, prepared using high-grade cocoa butter and real ingredients without any animal fats or preservatives.",
   },
   {
     question: "What is the shelf life and how should I store them?",
     answer:
-      "Our homemade chocolates have a shelf life of 60 days from the date of manufacturing. To enjoy the best flavor and texture, store them in a cool, dry place away from direct sunlight. Refrigeration is recommended during hotter months.",
+      "Our homemade chocolates have a shelf life of 60 days from the date of manufacturing. To enjoy the best flavor and texture, store them in a cool, dry place away from direct sunlight. Refrigeration is recommended during hotter weather.",
   },
   {
     question: "Do you accept bulk, corporate, or festive gifting orders?",
@@ -44,13 +44,13 @@ export function FAQ() {
   };
 
   return (
-    <section id="faq" className="bg-gray-50/70 py-20 sm:py-24 border-b border-gray-100">
-      <div className="mx-auto max-w-4xl px-5">
+    <section id="faq" className="bg-slate-50/50 py-14 sm:py-20 md:py-24 border-b border-gray-100">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div className="text-center">
-          <span className="mb-3 inline-block rounded-full bg-navy-900 px-4 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-sm">
+          <span className="mb-3 inline-block rounded-full bg-navy-50 border border-navy-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-navy-900">
             Got Questions?
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-gray-950">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-950">
             Frequently Asked Questions
           </h2>
           <p className="mx-auto mt-3 max-w-md text-sm sm:text-base text-gray-600">
@@ -58,32 +58,32 @@ export function FAQ() {
           </p>
         </div>
 
-        <div className="mt-12 space-y-4">
+        <div className="mt-10 sm:mt-14 space-y-3.5 sm:space-y-4">
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
               <div
                 key={i}
-                className="overflow-hidden rounded-2xl border border-gray-200/90 bg-white shadow-sm transition-all hover:border-gray-300"
+                className="overflow-hidden rounded-2xl border border-gray-200/90 bg-white shadow-xs transition-all hover:border-gray-300"
               >
                 <button
                   type="button"
                   onClick={() => toggle(i)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 p-6 text-left text-base sm:text-lg font-bold text-gray-950 transition-colors hover:text-navy-900"
+                  className="flex w-full items-center justify-between gap-4 p-5 sm:p-6 text-left text-sm sm:text-base md:text-lg font-bold text-gray-950 transition-colors hover:text-navy-900 cursor-pointer"
                 >
-                  <span className="flex items-center gap-3.5">
-                    <HelpCircle className="h-5 w-5 shrink-0 text-navy-900" />
+                  <span className="flex items-center gap-3">
+                    <HelpCircle className="h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-navy-900" />
                     <span>{faq.question}</span>
                   </span>
                   <ChevronDown
-                    className={`h-5 w-5 shrink-0 text-navy-900 transition-transform duration-200 ${
+                    className={`h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-navy-900 transition-transform duration-200 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
                 </button>
                 {isOpen && (
-                  <div className="border-t border-gray-100 px-6 pb-6 pt-4 text-sm sm:text-base leading-relaxed text-gray-600">
+                  <div className="border-t border-gray-100 px-5 sm:px-6 pb-5 sm:pb-6 pt-3.5 text-xs sm:text-sm md:text-base leading-relaxed text-gray-600">
                     {faq.answer}
                   </div>
                 )}
@@ -95,4 +95,3 @@ export function FAQ() {
     </section>
   );
 }
-

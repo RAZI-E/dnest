@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="bg-navy-950 py-16 text-gray-300 border-t border-navy-900">
+    <footer className="bg-navy-950 pt-16 pb-24 sm:pb-16 text-slate-300 border-t border-navy-900">
       <div className="mx-auto max-w-6xl px-5">
         <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr]">
           {/* Brand */}
@@ -20,7 +20,7 @@ export function Footer() {
                 className="h-9 w-auto"
               />
             </div>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-400">
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
               Artisan handcrafted chocolates made with passion and pure ingredients. Zero preservatives, 100% vegetarian, order fresh on WhatsApp.
             </p>
             {/* Social icons */}
@@ -30,14 +30,14 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp catalog"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-700 bg-navy-900 text-gray-300 transition-colors hover:border-white hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-navy-700 bg-navy-900 text-slate-300 transition-colors hover:border-white hover:text-white hover:bg-navy-800"
               >
                 <MessageCircle className="h-4 w-4" />
               </a>
               <a
                 href="#"
                 aria-label="Share"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-700 bg-navy-900 text-gray-300 transition-colors hover:border-white hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-navy-700 bg-navy-900 text-slate-300 transition-colors hover:border-white hover:text-white hover:bg-navy-800"
               >
                 <Share2 className="h-4 w-4" />
               </a>
@@ -50,7 +50,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm">
               {products.map((p) => (
                 <li key={p.slug}>
-                  <a href="#shop" className="text-gray-400 hover:text-white transition-colors">
+                  <a href="#shop" className="text-slate-400 hover:text-white transition-colors">
                     {p.name}
                   </a>
                 </li>
@@ -63,17 +63,17 @@ export function Footer() {
             <h3 className="font-display text-lg font-bold text-white">Explore &amp; Order</h3>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
-                <a href="#why-dnest" className="text-gray-400 hover:text-white transition-colors">
+                <a href="#why-dnest" className="text-slate-400 hover:text-white transition-colors">
                   Why D&apos;nest
                 </a>
               </li>
               <li>
-                <a href="#how-to-order" className="text-gray-400 hover:text-white transition-colors">
+                <a href="#how-to-order" className="text-slate-400 hover:text-white transition-colors">
                   How to Order
                 </a>
               </li>
               <li>
-                <a href="#faq" className="text-gray-400 hover:text-white transition-colors">
+                <a href="#faq" className="text-slate-400 hover:text-white transition-colors">
                   Frequently Asked Questions
                 </a>
               </li>
@@ -82,7 +82,7 @@ export function Footer() {
                   href={site.catalogUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-gold-300 hover:text-gold-200 transition-colors inline-flex items-center gap-1.5"
+                  className="font-semibold text-emerald-400 hover:text-emerald-300 transition-colors inline-flex items-center gap-1.5"
                 >
                   <MessageCircle className="h-3.5 w-3.5" />
                   WhatsApp Catalog
@@ -93,14 +93,14 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 border-t border-gray-800 pt-8 text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-14 border-t border-navy-900 pt-8 text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>
             © {new Date().getFullYear()} {site.name} Chocolates. All rights reserved.
           </p>
           {site.fssaiLicense && (
             <p>FSSAI License No. {site.fssaiLicense}</p>
           )}
-          <p className="text-gray-600">
+          <p className="text-slate-500">
             Handcrafted in India
           </p>
         </div>

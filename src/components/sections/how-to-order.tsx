@@ -34,23 +34,23 @@ export function HowToOrder() {
           </p>
         </div>
 
-        <ol className="mt-10 sm:mt-14 grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-3">
+        <ol className="mt-8 sm:mt-14 grid gap-4 sm:gap-8 grid-cols-1 md:grid-cols-3">
           {steps.map((s, i) => {
             const Icon = s.icon;
             return (
               <li
                 key={s.title}
-                className="relative flex flex-col rounded-3xl border border-gray-200/90 bg-white p-6 sm:p-8 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="relative flex flex-col rounded-2xl sm:rounded-3xl border border-gray-200/90 bg-white p-5 sm:p-8 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="mb-5 sm:mb-6 flex items-center justify-between">
-                  <span className="font-display text-4xl sm:text-5xl font-bold leading-none text-navy-900/20">
+                <div className="mb-4 sm:mb-6 flex items-center justify-between">
+                  <span className="font-display text-3xl sm:text-5xl font-bold leading-none text-navy-900/20">
                     0{i + 1}
                   </span>
-                  <div className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-2xl bg-navy-900 text-white shadow-sm">
+                  <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-navy-900 text-white shadow-xs">
                     <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
                 </div>
-                <h3 className="mb-2 text-lg sm:text-xl font-bold text-gray-950">{s.title}</h3>
+                <h3 className="mb-1.5 sm:mb-2 text-base sm:text-xl font-bold text-gray-950">{s.title}</h3>
                 <p className="text-xs sm:text-sm leading-relaxed text-gray-600">{s.text}</p>
               </li>
             );

@@ -19,22 +19,24 @@ export function Reviews() {
           </p>
         </div>
 
-        <div className="mt-10 sm:mt-14 grid gap-5 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 sm:mt-14 -mx-4 px-4 flex overflow-x-auto snap-x snap-mandatory gap-3.5 pb-3 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-6 sm:overflow-visible scrollbar-none">
           {reviews.map((r) => (
             <figure
               key={r.name}
-              className="flex flex-col rounded-3xl border border-gray-200/90 bg-slate-50/60 p-6 sm:p-7 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white"
+              className="w-[80vw] max-w-[280px] shrink-0 snap-center sm:w-auto flex flex-col justify-between rounded-2xl sm:rounded-3xl border border-gray-200/90 bg-slate-50/60 p-5 sm:p-7 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white"
             >
-              <Quote className="mb-3 h-5 w-5 sm:h-6 sm:w-6 text-navy-900/30" />
-              <blockquote className="flex-1 text-xs sm:text-sm leading-relaxed text-gray-700">
-                &ldquo;{r.text}&rdquo;
-              </blockquote>
-              <figcaption className="mt-5 sm:mt-6 border-t border-gray-200/80 pt-4">
+              <div>
+                <Quote className="mb-2.5 sm:mb-3 h-5 w-5 text-navy-900/30" />
+                <blockquote className="text-xs sm:text-sm leading-relaxed text-gray-700">
+                  &ldquo;{r.text}&rdquo;
+                </blockquote>
+              </div>
+              <figcaption className="mt-4 sm:mt-6 border-t border-gray-200/80 pt-3.5">
                 <div className="mb-1.5 flex gap-0.5">
                   {Array.from({ length: r.rating ?? 5 }).map((_, i) => (
                     <Star
                       key={i}
-                      className="h-3 w-3 sm:h-3.5 sm:w-3.5 fill-navy-900 text-navy-900"
+                      className="h-3 w-3 fill-navy-900 text-navy-900"
                     />
                   ))}
                 </div>

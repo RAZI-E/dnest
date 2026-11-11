@@ -26,14 +26,14 @@ export function Products() {
         </div>
 
         {/* Product Grid */}
-        <div className="mt-10 sm:mt-14 grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 sm:mt-14 grid gap-5 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-sm sm:max-w-none mx-auto">
           {products.map((p) => (
             <div
               key={p.slug}
-              className="group flex flex-col overflow-hidden rounded-3xl border border-gray-200/90 bg-white shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-navy-200 hover:shadow-xl"
+              className="group flex flex-col overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-200/90 bg-white shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-navy-200 hover:shadow-xl"
             >
-              {/* Product Image Stage */}
-              <div className="relative flex aspect-square items-center justify-center overflow-hidden bg-gradient-to-b from-slate-50/80 to-slate-100/50 p-6 border-b border-gray-100">
+              {/* Product Image Stage (Proportional on mobile & desktop) */}
+              <div className="relative flex aspect-[4/3] sm:aspect-square items-center justify-center overflow-hidden bg-gradient-to-b from-slate-50/80 to-slate-100/50 p-4 sm:p-6 border-b border-gray-100">
                 <Image
                   src={p.image}
                   alt={p.name}
@@ -44,7 +44,7 @@ export function Products() {
               </div>
 
               {/* Product Info */}
-              <div className="flex flex-1 flex-col justify-between p-5 sm:p-6">
+              <div className="flex flex-1 flex-col justify-between p-4 sm:p-6">
                 <div>
                   {/* Top Meta: Weight & Rating */}
                   <div className="flex items-center justify-between text-xs text-gray-500">
@@ -99,12 +99,12 @@ export function Products() {
         </div>
 
         {/* Combo Offer Banner */}
-        <div className="mt-12 sm:mt-16 flex flex-col items-center gap-6 rounded-3xl border border-gray-200/80 bg-slate-50/70 p-6 sm:p-8 text-center sm:flex-row sm:text-left shadow-xs">
+        <div className="mt-10 sm:mt-16 flex flex-col items-start sm:items-center gap-5 sm:gap-6 rounded-2xl sm:rounded-3xl border border-gray-200/80 bg-slate-50/70 p-5 sm:p-8 text-left sm:flex-row shadow-xs">
           <div className="flex-1">
             <span className="inline-block rounded-full bg-navy-900 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-0.5 mb-2">
               Signature Trio
             </span>
-            <p className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-gray-950">
+            <p className="font-display text-lg sm:text-2xl md:text-3xl font-bold text-gray-950 leading-snug">
               Can&apos;t choose? Order all three flavours!
             </p>
             <p className="mt-1.5 text-xs sm:text-sm text-gray-600">

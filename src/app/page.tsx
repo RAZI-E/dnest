@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <AnnouncementBar />
       <Header />
-      <main>
+      <main className="pb-16 sm:pb-0">
         <Hero />
         <StatsBar />
         <Products />

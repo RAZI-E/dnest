@@ -43,19 +43,21 @@ export function WhyDnest() {
           </p>
         </div>
 
-        <div className="mt-10 sm:mt-14 grid gap-5 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 sm:mt-14 grid gap-3.5 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {features.map(({ icon: Icon, title, description }) => (
             <div
               key={title}
-              className="group flex flex-col items-center rounded-3xl border border-gray-200/80 bg-white p-6 sm:p-7 text-center shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-gray-300"
+              className="group flex flex-row sm:flex-col items-start sm:items-center text-left sm:text-center rounded-2xl sm:rounded-3xl border border-gray-200/80 bg-white p-4 sm:p-7 shadow-xs gap-3.5 sm:gap-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-gray-300"
             >
-              <div className="mb-4 sm:mb-5 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl bg-navy-900 text-white shadow-sm transition-transform group-hover:scale-105">
+              <div className="mb-0 sm:mb-5 shrink-0 flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl bg-navy-900 text-white shadow-xs transition-transform group-hover:scale-105">
                 <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
               </div>
-              <h3 className="mb-2 font-display text-lg font-bold text-gray-950">{title}</h3>
-              <p className="text-xs sm:text-sm leading-relaxed text-gray-600">
-                {description}
-              </p>
+              <div className="flex-1">
+                <h3 className="mb-1 sm:mb-2 font-display text-base sm:text-lg font-bold text-gray-950">{title}</h3>
+                <p className="text-xs sm:text-sm leading-relaxed text-gray-600">
+                  {description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

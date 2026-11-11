@@ -39,18 +39,17 @@ export function GiftingBanner() {
             </div>
 
             <div className="flex flex-col items-start gap-3 md:items-end">
-              <Button asChild size="lg" className="w-full sm:w-auto bg-white text-navy-900 hover:bg-gray-100 font-bold px-8 shadow-sm">
+              <Button asChild size="lg" className="w-full sm:w-auto bg-white text-navy-900 hover:bg-gray-100 font-bold px-8 shadow-sm transition-all hover:shadow-md">
                 <a
                   href={site.catalogUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <MessageCircle className="h-4 w-4" />
-                  <span>Enquire on WhatsApp</span>
+                  <span>Enquire for Gifting</span>
                 </a>
               </Button>
               <p className="text-[11px] sm:text-xs text-gray-400">
-                Personalized response within a few hours on WhatsApp
+                Direct concierge response for weddings, corporate &amp; festive hampers
               </p>
             </div>
           </div>

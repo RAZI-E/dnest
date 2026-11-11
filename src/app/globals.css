@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy-950: #060e1b;
-  --color-navy-900: #0b1a30; /* Premium Luxury Midnight Sapphire */
-  --color-navy-800: #122442;
-  --color-navy-700: #1a345e;
-  --color-navy-600: #24477e;
-  --color-navy-100: #e2ebf6;
-  --color-navy-50: #f1f5fa; /* Soft Ice Slate Blue */
+  --color-navy-950: #0c193e;
+  --color-navy-900: #13265C; /* Brand Royal Blue */
+  --color-navy-800: #1c3578;
+  --color-navy-700: #26469b;
+  --color-navy-600: #3359be;
+  --color-navy-100: #e2e8f7;
+  --color-navy-50: #f0f3fa; /* Soft Ice Royal Blue */
 
   --color-cocoa: #2c1810;
   --color-surface-muted: #f8fafc;
@@ -23,9 +23,9 @@
   --foreground: #0f172a;
   --card: #ffffff;
   --card-foreground: #0f172a;
-  --primary: #0b1a30;
+  --primary: #13265C;
   --primary-foreground: #ffffff;
-  --ring: #0b1a30;
+  --ring: #13265C;
 }
 
 @theme inline {

@@ -1,8 +1,8 @@
 const stats = [
-  { value: "100%", label: "Homemade" },
+  { value: "100%", label: "Vegetarian & Pure" },
   { value: "0", label: "Preservatives" },
-  { value: "3", label: "Unique Flavours" },
-  { value: "⚡", label: "WhatsApp Orders" },
+  { value: "3", label: "Signature Flavours" },
+  { value: "5.0★", label: "Customer Rating" },
 ];
 
 export function StatsBar() {

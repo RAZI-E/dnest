@@ -12,7 +12,7 @@ const faqs: FAQItem[] = [
   {
     question: "How do I order and pay on WhatsApp?",
     answer:
-      "Tap any 'Buy on WhatsApp' or 'Open Catalog' button on this page. It directly opens our WhatsApp business catalog where you can select your flavours and quantities. Simply send your cart to us in chat, and we will share payment details (UPI / GPay / PhonePe / Paytm / Bank Transfer) and confirm your delivery address immediately.",
+      "Tap any 'Buy Now' or 'Order' button on this page. It directly opens our WhatsApp business catalog where you can select your flavours and quantities. Simply send your cart to us in chat, and we will share payment details (UPI / GPay / PhonePe / Paytm / Bank Transfer) and confirm your delivery address immediately.",
   },
   {
     question: "Are D'nest chocolates 100% vegetarian?",

@@ -1,10 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { MessageCircle, Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
-import { Button } from "@/components/ui/button";
 import { site } from "@/lib/site";
 
 export function Header() {
@@ -24,13 +23,13 @@ export function Header() {
             alt={site.name}
             width={472}
             height={130}
-            className="h-7 w-auto sm:h-8 object-contain drop-shadow-sm"
+            className="h-7 w-auto sm:h-8 object-contain drop-shadow-xs"
             priority
           />
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-8 text-sm font-semibold text-gray-700 md:flex">
+        <nav className="hidden items-center gap-9 text-sm font-medium tracking-wide text-gray-700 md:flex">
           <a href="#shop" className="transition-colors hover:text-navy-900">
             Flavours
           </a>
@@ -45,36 +44,26 @@ export function Header() {
           </a>
         </nav>
 
-        {/* Desktop CTA + mobile hamburger */}
-        <div className="flex items-center gap-2.5">
-          <Button asChild size="sm" className="hidden sm:inline-flex bg-navy-900 text-white hover:bg-navy-800 shadow-sm">
-            <a href={site.catalogUrl} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="h-4 w-4" />
-              <span>Order on WhatsApp</span>
-            </a>
-          </Button>
-
-          {/* Mobile menu trigger */}
-          <button
-            type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 text-gray-800 hover:bg-gray-50 active:scale-95 md:hidden cursor-pointer"
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
-        </div>
+        {/* Mobile menu trigger */}
+        <button
+          type="button"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          className="flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 text-gray-800 hover:bg-gray-50 active:scale-95 md:hidden cursor-pointer"
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
       </div>
 
       {/* Mobile nav drawer */}
       {open && (
-        <div className="border-t border-gray-100 bg-white px-5 py-5 shadow-xl md:hidden animate-fade-up">
-          <nav className="flex flex-col gap-1">
+        <div className="border-t border-gray-100 bg-white px-5 py-4 shadow-xl md:hidden animate-fade-up">
+          <nav className="flex flex-col divide-y divide-gray-100">
             <a
               href="#shop"
               onClick={() => setOpen(false)}
-              className="flex items-center justify-between rounded-xl px-3.5 py-3 text-base font-bold text-gray-900 hover:bg-gray-50"
+              className="flex items-center justify-between py-3.5 text-sm font-semibold text-gray-900 hover:text-navy-900"
             >
               <span>Flavours</span>
               <ArrowRight className="h-4 w-4 text-gray-400" />
@@ -82,7 +71,7 @@ export function Header() {
             <a
               href="#why-dnest"
               onClick={() => setOpen(false)}
-              className="flex items-center justify-between rounded-xl px-3.5 py-3 text-base font-bold text-gray-900 hover:bg-gray-50"
+              className="flex items-center justify-between py-3.5 text-sm font-semibold text-gray-900 hover:text-navy-900"
             >
               <span>Why D&apos;nest</span>
               <ArrowRight className="h-4 w-4 text-gray-400" />
@@ -90,7 +79,7 @@ export function Header() {
             <a
               href="#how-to-order"
               onClick={() => setOpen(false)}
-              className="flex items-center justify-between rounded-xl px-3.5 py-3 text-base font-bold text-gray-900 hover:bg-gray-50"
+              className="flex items-center justify-between py-3.5 text-sm font-semibold text-gray-900 hover:text-navy-900"
             >
               <span>How to Order</span>
               <ArrowRight className="h-4 w-4 text-gray-400" />
@@ -98,20 +87,12 @@ export function Header() {
             <a
               href="#faq"
               onClick={() => setOpen(false)}
-              className="flex items-center justify-between rounded-xl px-3.5 py-3 text-base font-bold text-gray-900 hover:bg-gray-50"
+              className="flex items-center justify-between py-3.5 text-sm font-semibold text-gray-900 hover:text-navy-900"
             >
               <span>FAQ</span>
               <ArrowRight className="h-4 w-4 text-gray-400" />
             </a>
           </nav>
-          <div className="mt-4 pt-4 border-t border-gray-100">
-            <Button asChild size="lg" className="w-full bg-navy-900 text-white hover:bg-navy-800 shadow-md">
-              <a href={site.catalogUrl} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="h-4 w-4" />
-                <span>Order on WhatsApp</span>
-              </a>
-            </Button>
-          </div>
         </div>
       )}
     </header>

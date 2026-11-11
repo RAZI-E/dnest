@@ -8,8 +8,8 @@ D'nest was founded with a singular commitment: returning chocolate to its purest
 ### 1. Peanut Chocolate Jar
 - **Official Name**: D'nest Peanut Chocolate Jar
 - **SKU / Slug**: peanut-chocolate
-- **Price**: ₹270 INR (Regular MRP ₹300)
-- **Net Quantity**: 200 grams
+- **Price**: ₹300 INR
+- **Net Quantity**: 500 grams
 - **Dietary Info**: 100% Vegetarian (Indian Green Veg Symbol certified)
 - **Taste Profile**: Rich chocolate sweetness balanced with savory roasted nut crunch
 - **Best Enjoyed**: Evening tea-time snack, dessert topping, movie night treat
@@ -17,8 +17,8 @@ D'nest was founded with a singular commitment: returning chocolate to its purest
 ### 2. Gulkand Chocolate Jar
 - **Official Name**: D'nest Gulkand Chocolate
 - **SKU / Slug**: gulkand-chocolate
-- **Price**: ₹270 INR (Regular MRP ₹300)
-- **Net Quantity**: 200 grams
+- **Price**: ₹300 INR
+- **Net Quantity**: 500 grams
 - **Dietary Info**: 100% Vegetarian
 - **Ingredients & Heritage**: Prepared with traditional Ayurvedic Shahi Gulkand (sun-cooked rose petal preserve) combined with premium chocolate.
 - **Taste Profile**: Aromatic floral bouquet, delicate caramel-rose chew, rich cocoa finish
@@ -27,8 +27,8 @@ D'nest was founded with a singular commitment: returning chocolate to its purest
 ### 3. Mix Fruit Chocolate Jar
 - **Official Name**: D'nest Mix Fruit Chocolate
 - **SKU / Slug**: mix-fruit-chocolate
-- **Price**: ₹270 INR (Regular MRP ₹300)
-- **Net Quantity**: 200 grams
+- **Price**: ₹300 INR
+- **Net Quantity**: 500 grams
 - **Dietary Info**: 100% Vegetarian
 - **Ingredients**: Assorted sun-dried fruits (berries, kiwi, apricot) coated in homemade cocoa
 - **Taste Profile**: Tangy-sweet fruity burst followed by a smooth cocoa melt

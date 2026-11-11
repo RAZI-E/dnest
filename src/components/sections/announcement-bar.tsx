@@ -1,11 +1,10 @@
 import { site } from "@/lib/site";
 
 const messages = [
-  "🍫 Homemade with love — no preservatives, zero artificial shortcuts",
-  "🎁 Beautifully packed jars — ideal for gifting & celebrations",
-  "✅ Order directly on WhatsApp — fast & personal confirmation",
-  "🛍️ Tap to browse all flavours on WhatsApp catalog",
-  "🌹 Gulkand · 🥜 Peanut · 🍇 Mix Fruit — three handcrafted favourites",
+  "Artisan Handcrafted Chocolates — 100% Vegetarian & Preservative-Free",
+  "Three Signature Delights: Roasted Peanut · Shahi Gulkand · Mix Fruit",
+  "Curated Handcrafted Jars — Exquisite for Gifting & Celebrations",
+  "Freshly Poured in Small Batches — Direct Doorstep Dispatch across India",
 ];
 
 export function AnnouncementBar() {

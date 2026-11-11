@@ -1,13 +1,10 @@
 import { MessageCircle, ShoppingCart, Send } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { site } from "@/lib/site";
-
 const steps = [
   {
     icon: MessageCircle,
     title: "Open the catalog",
-    text: "Tap any Buy button on this page. Our official WhatsApp catalog opens instantly with all three flavours ready to browse.",
+    text: "Tap any Buy Now button on this page. Our official WhatsApp catalog opens instantly with all three flavours ready to browse.",
   },
   {
     icon: ShoppingCart,
@@ -59,15 +56,6 @@ export function HowToOrder() {
             );
           })}
         </ol>
-
-        <div className="mt-10 sm:mt-12 flex justify-center md:justify-start">
-          <Button asChild size="lg" className="w-full sm:w-auto bg-navy-900 text-white hover:bg-navy-800 rounded-full font-bold px-8 shadow-sm">
-            <a href={site.catalogUrl} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="h-4 w-4" />
-              <span>Open WhatsApp Catalog</span>
-            </a>
-          </Button>
-        </div>
       </div>
     </section>
   );

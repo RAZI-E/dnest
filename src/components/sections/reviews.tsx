@@ -6,17 +6,17 @@ import { reviews } from "@/lib/reviews";
 export function Reviews() {
   if (reviews.length === 0) return null;
   return (
-    <section id="reviews" className="bg-navy-800 py-20">
+    <section id="reviews" className="bg-white py-20 sm:py-24 border-b border-gray-100">
       <div className="mx-auto max-w-6xl px-5">
         <div className="text-center">
-          <span className="mb-3 inline-block rounded-full border border-gold-400/30 bg-gold-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-gold-400">
+          <span className="mb-3 inline-block rounded-full bg-navy-900 px-4 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-sm">
             Customer Love
           </span>
-          <h2 className="font-display text-4xl font-medium text-gold-300 md:text-5xl">
-            What customers say
+          <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-gray-950">
+            What chocolate lovers say
           </h2>
-          <p className="mx-auto mt-3 max-w-sm text-ivory/60">
-            Real reviews from real chocolate lovers.
+          <p className="mx-auto mt-3 max-w-sm text-sm sm:text-base text-gray-600">
+            Real reviews from our happy customers across India.
           </p>
         </div>
 
@@ -24,14 +24,14 @@ export function Reviews() {
           {reviews.map((r) => (
             <figure
               key={r.name}
-              className="flex flex-col rounded-2xl border border-gold-400/10 bg-navy-700 p-6"
+              className="flex flex-col rounded-3xl border border-gray-200/90 bg-gray-50/70 p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white"
             >
-              <Quote className="mb-3 h-6 w-6 text-gold-400/40" />
-              <blockquote className="flex-1 text-sm leading-relaxed text-ivory/85">
-                {r.text}
+              <Quote className="mb-3 h-6 w-6 text-navy-900/40" />
+              <blockquote className="flex-1 text-sm leading-relaxed text-gray-700">
+                &ldquo;{r.text}&rdquo;
               </blockquote>
-              <figcaption className="mt-5 border-t border-gold-400/10 pt-4">
-                <div className="mb-1 flex gap-0.5">
+              <figcaption className="mt-6 border-t border-gray-200 pt-4">
+                <div className="mb-1.5 flex gap-1">
                   {Array.from({ length: r.rating ?? 5 }).map((_, i) => (
                     <Star
                       key={i}
@@ -39,9 +39,10 @@ export function Reviews() {
                     />
                   ))}
                 </div>
-                <span className="text-sm font-semibold text-gold-300">
+                <span className="text-sm font-bold text-gray-950">
                   {r.name}
                 </span>
+                <span className="block text-[11px] font-medium text-gray-500">Verified Buyer</span>
               </figcaption>
             </figure>
           ))}

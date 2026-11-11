@@ -5,19 +5,23 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-bold transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0 cursor-pointer",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-gold-300",
+        default: "bg-navy-900 text-white hover:bg-navy-800 shadow-sm hover:shadow",
         outline:
-          "border border-primary/60 text-primary hover:bg-primary/10",
-        dark: "bg-navy-900 text-gold-300 hover:bg-navy-700",
+          "border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white",
+        dark: "bg-navy-900 text-white hover:bg-navy-800 shadow-sm",
+        white: "bg-white text-navy-900 hover:bg-gray-100 shadow-md",
+        gold: "bg-gold-400 text-navy-900 hover:bg-gold-300 shadow-sm",
+        whatsapp: "bg-[#25D366] text-white hover:bg-[#20ba5a] shadow-md hover:shadow-lg",
       },
       size: {
         default: "h-11 px-6",
-        sm: "h-9 px-4",
+        sm: "h-9 px-4 text-xs",
         lg: "h-12 px-8 text-base",
+        xl: "h-14 px-10 text-lg",
       },
     },
     defaultVariants: { variant: "default", size: "default" },

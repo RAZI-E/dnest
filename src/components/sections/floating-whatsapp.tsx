@@ -7,18 +7,18 @@ export function FloatingWhatsApp() {
 
   return (
     <>
-      {/* Mobile Sticky Bottom Conversion Bar (< sm) */}
-      <div className="fixed bottom-0 inset-x-0 z-50 border-t border-gold-400/25 bg-navy-900/95 px-4 py-2.5 backdrop-blur shadow-2xl sm:hidden">
+      {/* Mobile Sticky Bottom Conversion Bar (< sm) (GOAT Life Clean Style) */}
+      <div className="fixed bottom-0 inset-x-0 z-50 border-t border-gray-200/90 bg-white/95 px-4 py-2.5 backdrop-blur-md shadow-2xl sm:hidden">
         <div className="flex items-center justify-between gap-3">
           <div>
-            <p className="text-xs font-semibold text-ivory">
+            <p className="text-xs font-bold text-gray-950">
               D&apos;nest Chocolates
             </p>
             <div className="flex items-baseline gap-1.5">
-              <span className="text-sm font-bold text-gold-300">
+              <span className="text-base font-extrabold text-navy-900">
                 {formatINR(price)}
               </span>
-              <span className="text-[11px] text-ivory/50 line-through">
+              <span className="text-xs text-gray-400 line-through">
                 {formatINR(mrp)}
               </span>
             </div>

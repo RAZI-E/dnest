@@ -25,8 +25,8 @@ export const products: Product[] = [
     weight: "500g Jar",
     highlights: ["Roasted Peanuts", "Pure Cocoa", "100% Veg"],
     image: "/images/peanut.png",
-    price: 300,
-    mrp: 300,
+    price: 299,
+    mrp: 299,
     tint: "#E9D2A6",
   },
   {
@@ -38,8 +38,8 @@ export const products: Product[] = [
     weight: "500g Jar",
     highlights: ["Shahi Gulkand", "Aromatic Rose", "100% Veg"],
     image: "/images/gulkand.png",
-    price: 300,
-    mrp: 300,
+    price: 299,
+    mrp: 299,
     tint: "#D8B3BC",
   },
   {
@@ -50,8 +50,8 @@ export const products: Product[] = [
     weight: "500g Jar",
     highlights: ["Real Fruit Bits", "Rich Cocoa", "100% Veg"],
     image: "/images/mix-fruit.png",
-    price: 300,
-    mrp: 300,
+    price: 299,
+    mrp: 299,
     tint: "#F2C9CF",
   },
 ];

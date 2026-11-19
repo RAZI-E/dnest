@@ -7,8 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "Homemade artisan chocolates in three flavours: Peanut, Gulkand, and Mix Fruit.",
     start_url: "/",
     display: "standalone",
-    background_color: "#ffffff",
-    theme_color: "#13265C",
+    background_color: "#F6F3EE",
+    theme_color: "#12163A",
     icons: [
       {
         src: "/images/favicon.ico",

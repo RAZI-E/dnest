@@ -8,7 +8,7 @@ export const site = {
   whatsappNumber: "919529176512",
   description:
     "D’nest crafts authentic homemade artisan chocolates in three signature flavours: Peanut Chocolate, Gulkand Chocolate, and Mix Fruit Chocolate. 100% vegetarian, handcrafted in small batches with zero preservatives. Order fresh chocolate jars directly on WhatsApp.",
-  catalogUrl: "https://wa.me/c/919529176512",
+  catalogUrl: "https://wa.me/c/144856982753472",
   // Shown in the footer when set. Food businesses in India should display this.
   fssaiLicense: process.env.NEXT_PUBLIC_FSSAI_LICENSE ?? "",
   keywords: [

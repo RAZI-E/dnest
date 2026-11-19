@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, HelpCircle } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 type FAQItem = {
   question: string;
@@ -12,27 +12,27 @@ const faqs: FAQItem[] = [
   {
     question: "How do I order and pay on WhatsApp?",
     answer:
-      "Tap any 'Buy Now' or 'Order' button on this page. It directly opens our WhatsApp business catalog where you can select your flavours and quantities. Simply send your cart to us in chat, and we will share payment details (UPI / GPay / PhonePe / Paytm / Bank Transfer) and confirm your delivery address immediately.",
+      "Tap any 'Order on WhatsApp' or 'Buy now' button on this page. Our official WhatsApp catalog opens directly where you can choose your flavours and quantities. Send your cart in chat, and we share payment details (UPI, GPay, PhonePe, Paytm, or Net Banking) and confirm dispatch.",
   },
   {
     question: "Are D'nest chocolates 100% vegetarian?",
     answer:
-      "Yes, absolutely! All D'nest chocolates are 100% vegetarian, prepared using high-grade cocoa butter and real ingredients without any animal fats or preservatives.",
+      "Yes, completely. Every D'nest chocolate jar is 100% vegetarian, prepared using pure cocoa butter and natural ingredients without animal fats or preservatives.",
   },
   {
     question: "What is the shelf life and how should I store them?",
     answer:
-      "Our homemade chocolates have a shelf life of 60 days from the date of manufacturing. To enjoy the best flavor and texture, store them in a cool, dry place away from direct sunlight. Refrigeration is recommended during hotter weather.",
+      "Our jars have a shelf life of 60 days from preparation. For optimal taste and aroma, store them in a cool, dry place away from direct sunlight. Refrigeration is recommended in warmer months.",
   },
   {
-    question: "Do you accept bulk, corporate, or festive gifting orders?",
+    question: "Do you accept custom, corporate, or wedding gifting orders?",
     answer:
-      "Yes! We create customized gift boxes and hampers for weddings, birthdays, festive occasions (Diwali, Rakhi, New Year), and corporate gifting. Please message us on WhatsApp with your requirements for special bulk pricing.",
+      "Yes. We curate personalized chocolate boxes and gift sets with custom tags, ribbon packaging, and handwritten greeting cards for weddings, festivals, and corporate gifting. Contact us on WhatsApp for bespoke orders and volume pricing.",
   },
   {
     question: "How long does shipping take?",
     answer:
-      "Orders are freshly packaged and dispatched within 24–48 hours. Depending on your location, delivery typically takes 3 to 5 business days.",
+      "Each order is packaged fresh in small batches and dispatched within 24 to 48 hours. Express doorstep delivery across India typically takes 3 to 5 business days.",
   },
 ];
 
@@ -44,47 +44,42 @@ export function FAQ() {
   };
 
   return (
-    <section id="faq" className="bg-slate-50/50 py-10 sm:py-20 md:py-24 border-b border-gray-100">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <div className="text-center">
-          <span className="mb-2 sm:mb-3 inline-block rounded-full bg-navy-50 border border-navy-100 px-3 py-0.5 sm:px-3.5 sm:py-1 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-navy-900">
-            Got Questions?
-          </span>
-          <h2 className="font-display text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-950">
-            Frequently Asked Questions
+    <section id="faq" className="bg-[#FAF8F5] py-16 sm:py-24 border-b border-[#3B2218]/10">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6">
+        {/* Section Heading */}
+        <div className="text-left mb-10 sm:mb-14">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-medium text-[#12163A] tracking-[-0.02em] leading-[1.08]">
+            Frequently asked questions
           </h2>
-          <p className="mx-auto mt-2 sm:mt-3 max-w-md text-xs sm:text-base text-gray-600">
-            Everything you need to know about our homemade chocolates, ingredients, and delivery.
+          <p className="mt-3 text-base sm:text-lg text-[#3B2218]/80 leading-relaxed">
+            Everything you need to know about our ingredients, ordering, and delivery.
           </p>
         </div>
 
-        <div className="mt-8 sm:mt-14 space-y-3 sm:space-y-4">
+        {/* Accordion with Simple Dividers Instead of Boxed Items */}
+        <div className="divide-y divide-[#3B2218]/15 border-y border-[#3B2218]/15">
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
-              <div
-                key={i}
-                className="overflow-hidden rounded-xl sm:rounded-2xl border border-gray-200/90 bg-white shadow-xs transition-all hover:border-gray-300"
-              >
+              <div key={i} className="py-2">
                 <button
                   type="button"
                   onClick={() => toggle(i)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-3 p-4 sm:p-6 text-left text-sm sm:text-base md:text-lg font-bold text-gray-950 transition-colors hover:text-navy-900 cursor-pointer"
+                  className="flex min-h-[56px] w-full items-center justify-between gap-4 py-3 sm:py-4 text-left text-base sm:text-lg font-medium text-[#12163A] transition-colors hover:text-[#C8A04A] cursor-pointer"
                 >
-                  <span className="flex items-center gap-2.5 sm:gap-3">
-                    <HelpCircle className="h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-navy-900" />
-                    <span>{faq.question}</span>
+                  <span className="font-display tracking-[-0.01em]">
+                    {faq.question}
                   </span>
                   <ChevronDown
-                    className={`h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-navy-900 transition-transform duration-200 ${
+                    className={`h-4 w-4 shrink-0 text-[#C8A04A] transition-transform duration-200 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
                 </button>
                 {isOpen && (
-                  <div className="border-t border-gray-100 px-4 sm:px-6 pb-4 sm:pb-6 pt-3 text-xs sm:text-sm md:text-base leading-relaxed text-gray-600">
-                    {faq.answer}
+                  <div className="pb-5 pt-1 text-sm sm:text-base leading-relaxed text-[#3B2218]/85 max-w-[62ch]">
+                    <p>{faq.answer}</p>
                   </div>
                 )}
               </div>

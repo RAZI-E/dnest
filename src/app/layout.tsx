@@ -1,9 +1,21 @@
 import type { Metadata } from "next";
-import "@fontsource-variable/bodoni-moda";
-import "@fontsource-variable/hanken-grotesk";
+import { Fraunces, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 import { JsonLd } from "@/components/seo/json-ld";
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  display: "swap",
+  axes: ["opsz"],
+});
+
+const instrumentSans = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-instrument",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -64,8 +76,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className="antialiased">
-      <body className="flex min-h-screen flex-col">
+    <html lang="en" className={`${fraunces.variable} ${instrumentSans.variable} antialiased scroll-smooth`}>
+      <body className="flex min-h-screen flex-col bg-[#F6F3EE] text-[#3B2218] font-sans">
         <JsonLd />
         {children}
       </body>

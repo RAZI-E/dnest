@@ -8,7 +8,6 @@ import { Hero } from "@/components/sections/hero";
 import { HowToOrder } from "@/components/sections/how-to-order";
 import { Products } from "@/components/sections/products";
 import { Reviews } from "@/components/sections/reviews";
-import { StatsBar } from "@/components/sections/stats-bar";
 import { WhyDnest } from "@/components/sections/why-dnest";
 
 export default function Home() {
@@ -16,12 +15,11 @@ export default function Home() {
     <>
       <AnnouncementBar />
       <Header />
-      <main className="pb-16 sm:pb-0">
+      <main id="content">
         <Hero />
-        <StatsBar />
         <Products />
-        <WhyDnest />
         <GiftingBanner />
+        <WhyDnest />
         <HowToOrder />
         <Reviews />
         <FAQ />

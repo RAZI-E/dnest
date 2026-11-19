@@ -1,56 +1,42 @@
 import Image from "next/image";
-import { MessageCircle, Share2 } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 import { products } from "@/lib/products";
 import { site } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="bg-navy-950 pt-16 pb-24 sm:pb-16 text-slate-300 border-t border-navy-900">
-      <div className="mx-auto max-w-6xl px-5">
-        <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr]">
+    <footer className="bg-[#12163A] pt-12 pb-[max(5.5rem,calc(4.5rem+env(safe-area-inset-bottom)))] sm:pb-14 text-[#F6F3EE] border-t border-[#C8A04A]/25">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="grid gap-8 sm:gap-10 sm:grid-cols-2 md:grid-cols-[1.5fr_1fr_1fr] items-start">
           {/* Brand */}
           <div>
-            <div className="inline-block rounded-xl bg-navy-900 px-3.5 py-1.5 border border-navy-800">
+            <a href="#top" className="inline-block transition-opacity hover:opacity-90">
               <Image
                 src="/images/wordmark.png"
                 alt={site.name}
                 width={472}
                 height={130}
-                className="h-9 w-auto"
+                className="h-7 w-auto"
               />
-            </div>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
-              Artisan handcrafted chocolates made with passion and pure ingredients. Zero preservatives, 100% vegetarian, order fresh on WhatsApp.
+            </a>
+            <p className="mt-3.5 max-w-xs text-xs sm:text-sm leading-relaxed text-[#F6F3EE]/70">
+              Handcrafted artisan chocolate jars made with pure cocoa butter and honest ingredients. 100% vegetarian with zero preservatives.
             </p>
-            {/* Social icons */}
-            <div className="mt-6 flex gap-3">
-              <a
-                href={site.catalogUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp catalog"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-navy-700 bg-navy-900 text-slate-300 transition-colors hover:border-white hover:text-white hover:bg-navy-800"
-              >
-                <MessageCircle className="h-4 w-4" />
-              </a>
-              <a
-                href="#"
-                aria-label="Share"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-navy-700 bg-navy-900 text-slate-300 transition-colors hover:border-white hover:text-white hover:bg-navy-800"
-              >
-                <Share2 className="h-4 w-4" />
-              </a>
-            </div>
           </div>
 
           {/* Flavours */}
           <div>
-            <h3 className="font-display text-lg font-bold text-white">Signature Flavours</h3>
-            <ul className="mt-4 space-y-2.5 text-sm">
+            <h3 className="font-display text-base font-medium text-[#C8A04A]">
+              Flavours
+            </h3>
+            <ul className="mt-3.5 space-y-2 text-xs sm:text-sm text-[#F6F3EE]/75">
               {products.map((p) => (
                 <li key={p.slug}>
-                  <a href="#shop" className="text-slate-400 hover:text-white transition-colors">
+                  <a
+                    href="#flavours"
+                    className="hover:text-[#C8A04A] transition-colors"
+                  >
                     {p.name}
                   </a>
                 </li>
@@ -58,50 +44,49 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Quick Links */}
+          {/* Catalog & Ordering */}
           <div>
-            <h3 className="font-display text-lg font-bold text-white">Explore &amp; Order</h3>
-            <ul className="mt-4 space-y-2.5 text-sm">
-              <li>
-                <a href="#why-dnest" className="text-slate-400 hover:text-white transition-colors">
-                  Why D&apos;nest
-                </a>
-              </li>
-              <li>
-                <a href="#how-to-order" className="text-slate-400 hover:text-white transition-colors">
-                  How to Order
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="text-slate-400 hover:text-white transition-colors">
-                  Frequently Asked Questions
-                </a>
-              </li>
+            <h3 className="font-display text-base font-medium text-[#C8A04A]">
+              Catalog &amp; ordering
+            </h3>
+            <ul className="mt-3.5 space-y-2 text-xs sm:text-sm text-[#F6F3EE]/75">
               <li>
                 <a
                   href={site.catalogUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-emerald-400 hover:text-emerald-300 transition-colors inline-flex items-center gap-1.5"
+                  className="inline-flex items-center gap-1.5 text-[#C8A04A] hover:text-[#DFBA67] font-medium transition-colors"
                 >
                   <MessageCircle className="h-3.5 w-3.5" />
-                  WhatsApp Catalog
+                  <span>WhatsApp catalog</span>
+                </a>
+              </li>
+              <li>
+                <a href="#gift-set" className="hover:text-[#C8A04A] transition-colors">
+                  Gift set &amp; hampers
+                </a>
+              </li>
+              <li>
+                <a href="#how-to-order" className="hover:text-[#C8A04A] transition-colors">
+                  How to order
+                </a>
+              </li>
+              <li>
+                <a href="#faq" className="hover:text-[#C8A04A] transition-colors">
+                  Frequently asked questions
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-14 border-t border-navy-900 pt-8 text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+        {/* Compact Bottom Line */}
+        <div className="mt-10 border-t border-[#C8A04A]/15 pt-6 text-xs text-[#F6F3EE]/50 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p>
-            © {new Date().getFullYear()} {site.name} Chocolates. All rights reserved.
+            © {new Date().getFullYear()} {site.name} Chocolates. Handcrafted in India.
           </p>
-          {site.fssaiLicense && (
-            <p>FSSAI License No. {site.fssaiLicense}</p>
-          )}
-          <p className="text-slate-500">
-            Handcrafted in India
+          <p className="text-[#F6F3EE]/40">
+            500g glass jars · Pure vegetarian confectionery
           </p>
         </div>
       </div>

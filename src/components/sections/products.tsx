@@ -1,130 +1,119 @@
 import Image from "next/image";
-import { Star } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import {
-  formatINR,
-  productUrl,
-  products,
-} from "@/lib/products";
-import { site } from "@/lib/site";
+import { formatINR, productUrl, products } from "@/lib/products";
 
 export function Products() {
   return (
-    <section id="shop" className="bg-white py-16 sm:py-20 md:py-24 border-b border-gray-100">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="text-center md:text-left">
-          <span className="mb-3 inline-block rounded-full bg-navy-50 border border-navy-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-navy-900">
-            D&apos;nest Signature Collection
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-950">
-            Pick your favourite chocolate jar
-          </h2>
-          <p className="mt-3 max-w-lg text-sm sm:text-base text-gray-600">
-            Every jar of D&apos;nest homemade chocolate is freshly prepared with pure, 100% vegetarian ingredients and zero artificial shortcuts.
-          </p>
-        </div>
+    <section id="flavours" className="bg-[#F6F3EE] pt-14 sm:pt-20 lg:pt-24">
+      {/* Section Header */}
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 mb-12 sm:mb-16 text-left">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-medium text-[#12163A] tracking-[-0.02em]">
+          Pick your favourite chocolate jar
+        </h2>
+        <p className="mt-3 max-w-xl text-base sm:text-lg text-[#3B2218]/80 leading-relaxed">
+          Three recipes, hand-poured in 500g glass jars with pure cocoa butter, honest ingredients, and zero preservatives.
+        </p>
+      </div>
 
-        {/* Product Grid */}
-        <div className="mt-8 sm:mt-14 grid gap-5 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-sm sm:max-w-none mx-auto">
-          {products.map((p) => (
+      {/* Three Full-Width Flavour Bands */}
+      <div className="flex flex-col">
+        {products.map((p, index) => {
+          const isEven = index % 2 === 1;
+          const buttonVariant =
+            index === 0 ? "amber" : index === 1 ? "rose" : "berry";
+
+          return (
             <div
               key={p.slug}
-              className="group flex flex-col overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-200/90 bg-white shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-navy-200 hover:shadow-xl"
+              className="w-full border-t border-[#3B2218]/10 py-12 sm:py-20 lg:py-24"
+              style={{ backgroundColor: p.accentBg }}
             >
-              {/* Product Image Stage (Proportional on mobile & desktop) */}
-              <div className="relative flex aspect-[4/3] sm:aspect-square items-center justify-center overflow-hidden bg-gradient-to-b from-slate-50/80 to-slate-100/50 p-4 sm:p-6 border-b border-gray-100">
-                <Image
-                  src={p.image}
-                  alt={p.name}
-                  width={400}
-                  height={400}
-                  className="h-full w-full object-contain p-2 sm:p-4 transition-transform duration-500 group-hover:scale-105 drop-shadow-sm"
-                />
-              </div>
-
-              {/* Product Info */}
-              <div className="flex flex-1 flex-col justify-between p-4 sm:p-6">
-                <div>
-                  {/* Top Meta: Weight & Rating */}
-                  <div className="flex items-center justify-between text-xs text-gray-500">
-                    <span className="font-medium tracking-wide">
-                      {p.weight}
-                    </span>
-                    <div className="flex items-center gap-1">
-                      <Star className="h-3 w-3 fill-navy-900 text-navy-900" />
-                      <span className="font-bold text-gray-800">5.0</span>
+              <div className="mx-auto max-w-6xl px-5 sm:px-6">
+                <div
+                  className={`flex flex-col md:grid md:items-center gap-8 lg:gap-16 md:grid-cols-2 ${
+                    isEven ? "md:grid-flow-dense" : ""
+                  }`}
+                >
+                  {/* Jar Shot: On top at 4:5 on mobile */}
+                  <div
+                    className={`relative mx-auto w-full max-w-[280px] sm:max-w-[380px] lg:max-w-[440px] flex items-center justify-center ${
+                      isEven ? "md:col-start-2" : ""
+                    }`}
+                  >
+                    <div
+                      aria-hidden
+                      className="pointer-events-none absolute inset-0 rounded-full opacity-30 blur-2xl"
+                      style={{ backgroundColor: p.accent }}
+                    />
+                    <div className="relative z-10 w-full aspect-[4/5] sm:aspect-square rounded-2xl bg-white/40 p-4 sm:p-7 backdrop-blur-xs border border-white/60 shadow-sm flex items-center justify-center">
+                      <Image
+                        src={p.image}
+                        alt={`${p.name} — 500g jar`}
+                        width={440}
+                        height={440}
+                        sizes="(max-width: 640px) 280px, (max-width: 1024px) 380px, 440px"
+                        className="h-full w-full object-contain drop-shadow-[0_16px_24px_rgba(59,34,24,0.18)] transition-transform duration-500 hover:scale-105"
+                      />
                     </div>
                   </div>
 
-                  {/* Title & Description */}
-                  <h3 className="font-display mt-2.5 text-xl font-bold text-gray-950 leading-snug">
-                    {p.name}
-                  </h3>
+                  {/* Text and Actions */}
+                  <div className={`text-left w-full ${isEven ? "md:col-start-1" : ""}`}>
+                    {/* Flavour Name in Fraunces */}
+                    <h3 className="font-display text-2xl sm:text-4xl lg:text-5xl font-medium text-[#12163A] tracking-[-0.02em] leading-[1.08]">
+                      {p.name}
+                    </h3>
 
-                  <p className="mt-2 text-xs sm:text-sm leading-relaxed text-gray-600 line-clamp-2">
-                    {p.description}
-                  </p>
-                </div>
+                    {/* Sentence about taste */}
+                    <p className="mt-3 sm:mt-4 text-base sm:text-lg text-[#3B2218] leading-relaxed max-w-[46ch]">
+                      {p.taste}
+                    </p>
 
-                {/* Bottom: Price & Action */}
-                <div className="mt-6 border-t border-gray-100 pt-4">
-                  <div className="mb-3.5 flex items-baseline justify-between">
-                    <span className="font-display text-2xl font-extrabold text-gray-950">
-                      {formatINR(p.price)}
-                    </span>
-                    <span className="text-xs font-medium text-emerald-700">
-                      100% Veg
-                    </span>
+                    {/* Quiet Ingredient Line */}
+                    <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-[#6C5147] leading-relaxed max-w-[50ch]">
+                      <span className="font-medium text-[#3B2218]">Ingredients:</span>{" "}
+                      {p.ingredients}
+                    </p>
+
+                    {/* Price and Details */}
+                    <div className="mt-5 sm:mt-8 flex items-baseline gap-2.5">
+                      <span
+                        className="font-price text-2xl sm:text-3xl md:text-4xl font-medium"
+                        style={{ color: p.accent }}
+                      >
+                        {formatINR(p.price)}
+                      </span>
+                      <span className="text-xs sm:text-base text-[#6C5147]">
+                        · {p.weight} · 100% vegetarian
+                      </span>
+                    </div>
+
+                    {/* Full-width Order Button on mobile */}
+                    <div className="mt-6 sm:mt-8">
+                      <Button
+                        asChild
+                        variant={buttonVariant}
+                        size="lg"
+                        className="w-full sm:w-auto min-h-[48px] px-9 font-medium shadow-sm transition-all duration-200 hover:shadow-md"
+                      >
+                        <a
+                          href={productUrl(p)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <MessageCircle className="h-4 w-4" />
+                          <span>Buy now</span>
+                        </a>
+                      </Button>
+                    </div>
                   </div>
-
-                  {/* Buy Button */}
-                  <Button
-                    asChild
-                    size="lg"
-                    className="w-full bg-navy-900 text-white hover:bg-navy-800 rounded-full font-bold shadow-xs transition-all duration-200 hover:shadow-md active:scale-[0.98]"
-                  >
-                    <a
-                      href={productUrl(p)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Buy Now
-                    </a>
-                  </Button>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* Combo Offer Banner */}
-        <div className="mt-10 sm:mt-16 flex flex-col items-start sm:items-center gap-5 sm:gap-6 rounded-2xl sm:rounded-3xl border border-gray-200/80 bg-slate-50/70 p-5 sm:p-8 text-left sm:flex-row shadow-xs">
-          <div className="flex-1">
-            <span className="inline-block rounded-full bg-navy-900 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-0.5 mb-2">
-              Signature Trio
-            </span>
-            <p className="font-display text-lg sm:text-2xl md:text-3xl font-bold text-gray-950 leading-snug">
-              Can&apos;t choose? Order all three flavours!
-            </p>
-            <p className="mt-1.5 text-xs sm:text-sm text-gray-600">
-              Combine your favourite chocolate jars with complimentary doorstep packaging.
-            </p>
-          </div>
-          <Button
-            asChild
-            size="lg"
-            className="w-full sm:w-auto shrink-0 bg-navy-900 text-white hover:bg-navy-800 rounded-full font-bold px-8 shadow-sm transition-all hover:shadow-md"
-          >
-            <a
-              href={site.catalogUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Order Collection
-            </a>
-          </Button>
-        </div>
+          );
+        })}
       </div>
     </section>
   );

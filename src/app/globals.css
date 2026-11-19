@@ -1,50 +1,43 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy-950: #0c193e;
-  --color-navy-900: #13265C; /* Brand Royal Blue */
-  --color-navy-800: #1c3578;
-  --color-navy-700: #26469b;
-  --color-navy-600: #3359be;
-  --color-navy-100: #e2e8f7;
-  --color-navy-50: #f0f3fa; /* Soft Ice Royal Blue */
+  --color-midnight: #12163A;
+  --color-midnight-deep: #0D102D;
+  --color-gold: #C8A04A;
+  --color-gold-hover: #B68F3C;
+  --color-gold-light: #DFBA67;
+  --color-cocoa: #3B2218;
+  --color-cocoa-muted: #6C5147;
+  --color-cocoa-light: #8E7166;
+  --color-paper: #F6F3EE;
+  --color-paper-card: #FFFFFF;
+  --color-paper-subtle: #ECE8E1;
 
-  --color-cocoa: #2c1810;
-  --color-surface-muted: #f8fafc;
-  --color-surface-subtle: #f1f5f9;
+  --color-amber-roasted: #B9772E;
+  --color-amber-tint: #FBF5EE;
 
-  --animate-marquee: marquee 28s linear infinite;
-  --animate-float: float 4s ease-in-out infinite;
-  --animate-fade-up: fade-up 0.5s ease both;
+  --color-rose-gulkand: #B4506A;
+  --color-rose-tint: #FAF0F3;
+
+  --color-berry-mix: #7A2E4D;
+  --color-berry-tint: #F8EEF2;
+
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-instrument), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --card: #ffffff;
-  --card-foreground: #0f172a;
-  --primary: #13265C;
-  --primary-foreground: #ffffff;
-  --ring: #13265C;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-ring: var(--ring);
-  --font-display: "Bodoni Moda Variable", Georgia, serif;
-  --font-sans: "Hanken Grotesk Variable", system-ui, sans-serif;
+  --background: #F6F3EE;
+  --foreground: #3B2218;
+  --primary: #12163A;
+  --primary-foreground: #FFFFFF;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
-  background-color: var(--background);
-  color: var(--foreground);
+  scroll-padding-top: 4.5rem;
+  background-color: #F6F3EE;
+  color: #3B2218;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -54,36 +47,67 @@ html {
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: #F6F3EE;
+  color: #3B2218;
   font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* Confident Fraunces Headlines */
+.font-display {
+  font-family: var(--font-display);
+  font-feature-settings: "opsz" 72;
+  font-variation-settings: "opsz" 72;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
+/* Tabular figures for prices */
+.font-price {
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
 }
 
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Subtle Hero Entrance - the single orchestrated moment */
+@keyframes hero-jar-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
-.animate-marquee {
-  animation: marquee 28s linear infinite;
+@keyframes hero-text-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.animate-float {
-  animation: float 4s ease-in-out infinite;
+.animate-hero-jar {
+  animation: hero-jar-entrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.animate-marquee:hover {
-  animation-play-state: paused;
+.animate-hero-text {
+  animation: hero-text-entrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-jar,
+  .animate-hero-text {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }

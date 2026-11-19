@@ -1,60 +1,85 @@
-import { MessageCircle, ShoppingCart, Send } from "lucide-react";
-
 const steps = [
   {
-    icon: MessageCircle,
-    title: "Open the catalog",
-    text: "Tap any Buy Now button on this page. Our official WhatsApp catalog opens instantly with all three flavours ready to browse.",
+    step: "1",
+    title: "Browse the catalog",
+    sentence: "Tap any order button to open our official WhatsApp catalog with all three 500g flavours.",
   },
   {
-    icon: ShoppingCart,
-    title: "Add your jars to cart",
-    text: "Choose your flavours (Peanut, Gulkand, Mix Fruit) and quantity, then add them to your WhatsApp cart.",
+    step: "2",
+    title: "Select your jars",
+    sentence: "Choose your flavours and quantities, then send your selected jars directly in chat.",
   },
   {
-    icon: Send,
-    title: "Send & get delivery",
-    text: "Send your cart in chat. We confirm your delivery address, share UPI payment details, and dispatch your order fast.",
+    step: "3",
+    title: "Confirm and receive",
+    sentence: "We share UPI details, confirm your delivery address, and dispatch your jars fresh across India.",
   },
 ];
 
 export function HowToOrder() {
   return (
-    <section id="how-to-order" className="bg-slate-50/50 py-14 sm:py-20 md:py-24 border-b border-gray-100">
+    <section id="how-to-order" className="bg-[#FAF8F5] py-16 sm:py-24 border-b border-[#3B2218]/10">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="text-center md:text-left">
-          <span className="mb-3 inline-block rounded-full bg-navy-50 border border-navy-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-navy-900">
-            How to Order
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-950">
+        {/* Section Heading */}
+        <div className="max-w-2xl text-left mb-12 sm:mb-16">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-medium text-[#12163A] tracking-[-0.02em] leading-[1.08]">
             Order in three easy steps
           </h2>
-          <p className="mt-3 max-w-md text-sm sm:text-base text-gray-600">
-            No accounts, no downloads, no friction. Order fresh homemade chocolates straight through WhatsApp in under 60 seconds.
+          <p className="mt-3 text-base sm:text-lg text-[#3B2218]/80 leading-relaxed">
+            No accounts or downloads. Direct personal ordering through WhatsApp in under a minute.
           </p>
         </div>
 
-        <ol className="mt-8 sm:mt-14 grid gap-4 sm:gap-8 grid-cols-1 md:grid-cols-3">
-          {steps.map((s, i) => {
-            const Icon = s.icon;
-            return (
-              <li
-                key={s.title}
-                className="relative flex flex-col rounded-2xl sm:rounded-3xl border border-gray-200/90 bg-white p-5 sm:p-8 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              >
-                <div className="mb-4 sm:mb-6 flex items-center justify-between">
-                  <span className="font-display text-3xl sm:text-5xl font-bold leading-none text-navy-900/20">
-                    0{i + 1}
-                  </span>
-                  <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-navy-900 text-white shadow-xs">
-                    <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
-                  </div>
+        {/* Mobile Vertical Timeline (< md) */}
+        <div className="relative pl-8 md:hidden text-left">
+          {/* Continuous thin vertical gold line on the left */}
+          <div
+            aria-hidden
+            className="absolute left-3.5 top-3.5 bottom-3.5 w-[1px] bg-[#C8A04A]/35"
+          />
+
+          <ol className="space-y-8">
+            {steps.map((s) => (
+              <li key={s.step} className="relative flex items-start gap-4">
+                {/* Small numeral on the vertical line */}
+                <span className="absolute -left-8 flex h-7 w-7 items-center justify-center rounded-full bg-[#12163A] text-[#C8A04A] font-price text-xs font-medium ring-4 ring-[#FAF8F5]">
+                  {s.step}
+                </span>
+                <div className="pt-0.5">
+                  <h3 className="font-display text-lg font-medium text-[#12163A]">
+                    {s.title}
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-[#3B2218]/85">
+                    {s.sentence}
+                  </p>
                 </div>
-                <h3 className="mb-1.5 sm:mb-2 text-base sm:text-xl font-bold text-gray-950">{s.title}</h3>
-                <p className="text-xs sm:text-sm leading-relaxed text-gray-600">{s.text}</p>
               </li>
-            );
-          })}
+            ))}
+          </ol>
+        </div>
+
+        {/* Desktop Single Horizontal Sequence (>= md) */}
+        <ol className="hidden md:grid md:grid-cols-3 gap-8 lg:gap-12 text-left relative pt-2">
+          {/* Thin subtle horizontal connecting line behind numerals */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute left-4 right-12 top-6 h-[1px] bg-[#C8A04A]/25 -z-0"
+          />
+          {steps.map((s) => (
+            <li key={s.step} className="relative z-10 flex flex-col items-start">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#12163A] text-[#C8A04A] font-price text-sm font-medium shadow-xs">
+                  {s.step}
+                </span>
+                <h3 className="font-display text-xl lg:text-2xl font-medium text-[#12163A]">
+                  {s.title}
+                </h3>
+              </div>
+              <p className="text-sm lg:text-base leading-relaxed text-[#3B2218]/85 max-w-[38ch]">
+                {s.sentence}
+              </p>
+            </li>
+          ))}
         </ol>
       </div>
     </section>
